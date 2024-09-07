@@ -44,13 +44,20 @@ if ($row) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Hydroponic Monitoring System Online</title>
 	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<style>
+		body {
+			font-family: 'Poppins', sans-serif;
+		}
+	</style>
 </head>
 
 <body class="">
 	<nav class="bg-gray-200 shadow shadow-gray-300 w-full px-8 md:px-auto">
 		<div class="md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
 			<div class="text-indigo-500 md:order-1">
-				<img src="logo.png" class="w-28 h-24">
+				<a href="main.php">
+					<img src="logo.png" class="w-28 h-24"></a>
 			</div>
 			<div class="block md:hidden">
 				<button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-600 border-gray-600">
@@ -60,45 +67,46 @@ if ($row) {
 					</svg>
 				</button>
 			</div>
-			<div class="text-gray-500 order-1 flex justify-center w-full md:w-auto md:order-2 md:block" id="nav-content">
+			<div class="text-gray-500 order-3 w-full md:w-auto md:order-2 hidden md:block" id="nav-content">
 				<ul class="flex font-semibold justify-between">
-					<li class="md:px-4 md:py-2  text-indigo-500"><a href="main.php">Beranda</a></li>
-					<li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="logs.php">Logs</a></li>
+					<li class="md:px-4 md:py-2  text-[#4E6F43]"><a href="main.php">Beranda</a></li>
+					<li class="md:px-4 md:py-2 hover:text-[#4E6F43]"><a href="logs.php">Logs</a></li>
 				</ul>
 			</div>
-			
 		</div>
 	</nav>
-	<main class="container mx-auto px-4 py-8 bg-gray-100 h-screen">
-		<div class="">
-			<div class="flex justify-center mb-8">
-				<h2 class="font-semibold text-3xl text-gray-900">Hydroponic Online Monitoring System </h2>
-			</div>
-			<div class="flex justify-center mb-10">
-				<div class="border border-gray-300 bg-white shadow-lg rounded-lg p-8 w-full md:w-2/3 lg:w-1/2">
-					<h2 class="text-2xl font-bold text-black mb-4">Status Hidroponik</h2>
-					<div class="text-lg font-semibold mb-2">Suhu: <span class="font-normal"><?php echo $suhu; ?> °C</span></div>
-					<div class="text-lg font-semibold mb-2">Suhu 2: <span class="font-normal"><?php echo $suhu2; ?> °C</span></div>
-					<div class="text-lg font-semibold mb-2">TDS: <span class="font-normal"><?php echo $tds; ?> ppm</span></div>
-					<div class="text-lg font-semibold mb-2">Terakhir diupdate: <span class="font-normal"><?php echo $formatted_date; ?></span></div>
-					<div class="text-xl font-semibold mt-6 <?php echo $kondisi_warna; ?> text-white rounded-lg px-4 py-2 text-center flex items-center justify-center h-16">
-						<div class="h-6 w-6 flex-shrink-0">
-							<?php echo $icon; ?>
-						</div>
-						<span class="ml-2"><?php echo $kondisi_air; ?></span>
+	<main class="container mx-auto px-4 py-8 relative bg-cover bg-center bg-no-repeat h-screen"
+		style="background-image: url('bg.png');">
+		<div class="flex justify-center items-center mt-36">
+			<div class=" bg-white  rounded-lg p-8 w-full md:w-2/3 lg:w-1/2 ">
+				<h2 class="text-4xl font-bold text-black mb-10 text-center">Status Hidroponik</h2>
+				<div class="text-lg font-semibold mb-2">Suhu: <span class="font-normal"><?php echo $suhu; ?> °C</span></div>
+				<div class="text-lg font-semibold mb-2">Suhu 2: <span class="font-normal"><?php echo $suhu2; ?> °C</span></div>
+				<div class="text-lg font-semibold mb-2">TDS: <span class="font-normal"><?php echo $tds; ?> ppm</span></div>
+				<div class="text-lg font-semibold mb-2">Terakhir diupdate: <span class="font-normal"><?php echo $formatted_date; ?></span></div>
+				<div class="text-xl font-semibold mt-10 <?php echo $kondisi_warna; ?> text-white rounded-lg px-4 py-2 text-center flex items-center justify-center h-16">
+					<div class="h-6 w-6 flex-shrink-0">
+						<?php echo $icon; ?>
 					</div>
-
-					<div class="flex justify-center mt-5">
-						<div class="text-center text-lg">
-							<p class="text-gray-600">Pantau Perkembangan Tanaman <a href="logs.php" class="underline font-semibold">di sini</a></p>
-						</div>
+					<span class="ml-2"><?php echo $kondisi_air; ?></span>
+				</div>
+				<div class="flex justify-center mt-5">
+					<div class="text-center text-md">
+						<p class="text-gray-600">Pantau Perkembangan Tanaman <a href="logs.php" class="underline font-semibold">di sini</a></p>
 					</div>
 				</div>
 			</div>
-			<div>
-			</div>
+		</div>
 	</main>
-	</div>
+
+
 </body>
+
+<script>
+	// Toggle menu on mobile
+	document.getElementById('nav-toggle').addEventListener('click', function() {
+		document.getElementById('nav-content').classList.toggle('hidden');
+	});
+</script>
 
 </html>

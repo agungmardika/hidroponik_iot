@@ -24,13 +24,20 @@ $json_data = json_encode($data);
     <title>Logs Hidroponik</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
 
 <body class="">
     <nav class="bg-gray-200 shadow shadow-gray-300 w-full px-8 md:px-auto">
         <div class="md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
             <div class="text-indigo-500 md:order-1">
-                <img src="logo.png" class="w-28 h-24">
+                <a href="main.php">
+                    <img src="logo.png" class="w-28 h-24"></a>
             </div>
             <div class="block md:hidden">
                 <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-600 border-gray-600">
@@ -42,13 +49,13 @@ $json_data = json_encode($data);
             </div>
             <div class="text-gray-500 order-3 w-full md:w-auto md:order-2 hidden md:block" id="nav-content">
                 <ul class="flex font-semibold justify-between">
-                    <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="main.php">Beranda</a></li>
-                    <li class="md:px-4 md:py-2 text-indigo-500"><a href="#">Logs</a></li>
+                    <li class="md:px-4 md:py-2 hover:text-[#4E6F43]"><a href="main.php">Beranda</a></li>
+                    <li class="md:px-4 md:py-2 text-[#4E6F43]"><a href="#">Logs</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <main class="container mx-auto px-4 py-8 bg-gray-100">
+    <main class="container mx-auto px-4 py-8 bg-[#1876B3]">
         <div class="bg-white  p-10 rounded-lg">
             <div class="text-center mb-8">
                 <h2 class="font-semibold text-3xl text-gray-900">Logs Hidroponik</h2>
@@ -70,10 +77,11 @@ $json_data = json_encode($data);
                 </div>
             </div>
             <div class="text-center mt-12">
-                <a href="main.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <a href="main.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 sm:px-8 md:px-10 lg:px-12 py-2 rounded text-sm sm:text-base md:text-lg lg:text-xl block sm:inline-block w-full sm:w-auto">
                     Kembali ke Halaman Utama
                 </a>
             </div>
+
         </div>
     </main>
 
